@@ -1,0 +1,20 @@
+<table border="1">
+    <thead>
+        <td>Movie name</td>
+        <td>Description</td>
+        <td>Rating</td>
+        <td>Director</td>
+        <td>Actor</td>
+    </thead>
+    <tbody>
+        <?php foreach($block->getMovies() as $movie):  ?>
+            <tr>
+                <td><?= $movie['name'] ?></td>
+                <td><?= $movie['description'] ?></td>
+                <td><?= $movie['rating'] ?></td>
+                <td><?= $movie['director'] ?></td>
+                <td><?= $movie['actor'] ?></td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
