@@ -1,5 +1,6 @@
 <table border="1">
     <thead>
+        <td>ID</td>
         <td>Movie name</td>
         <td>Description</td>
         <td>Rating</td>
@@ -9,6 +10,7 @@
     <tbody>
         <?php foreach($block->getMovies() as $movie):  ?>
             <tr>
+                <td><?= $movie['movie_id'] ?></td>
                 <td><?= $movie['name'] ?></td>
                 <td><?= $movie['description'] ?></td>
                 <td><?= $movie['rating'] ?></td>
