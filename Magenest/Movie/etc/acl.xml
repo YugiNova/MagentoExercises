@@ -6,8 +6,9 @@
             <resource id="Magento_Backend::admin">
                 <resource id="Magenest_Movie::movie_menu" title="Movie" sortOrder="1">
                     <resource id="Magenest_Movie::movie_index" title="Movie index" sortOrder="1"/>
-                    <resource id="Magenest_Movie::actor_index" title="Actor index" sortOrder="2"/>
-                    <resource id="Magenest_Movie::director_index" title="Director index" sortOrder="3"/>
+                    <resource id="Magenest_Movie::movie_form" title="Movie form" sortOrder="2"/>
+                    <resource id="Magenest_Movie::actor_index" title="Actor index" sortOrder="3"/>
+                    <resource id="Magenest_Movie::director_index" title="Director index" sortOrder="4"/>
                 </resource>
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">

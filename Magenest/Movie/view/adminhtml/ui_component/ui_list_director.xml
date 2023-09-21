@@ -3,34 +3,34 @@
          xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">ui_list_movie.ui_list_movie_data_source</item>
+            <item name="provider" xsi:type="string">ui_list_director.ui_list_director_data_source</item>
         </item>
     </argument>
     <settings>
         <buttons>
             <button name="add">
-                <url path="*/*/form"/>
+                <url path="*/*/*"/>
                 <class>primary</class>
-                <label translate="true">Add Movie</label>
+                <label translate="true">Add Actor</label>
             </button>
         </buttons>
-        <spinner>ui_list_movie_columns</spinner>
+        <spinner>ui_list_director_columns</spinner>
         <deps>
-            <dep>ui_list_movie.ui_list_movie_data_source</dep>
+            <dep>ui_list_director.ui_list_director_data_source</dep>
         </deps>
     </settings>
-    <dataSource name="ui_list_movie_data_source" component="Magento_Ui/js/grid/provider">
+    <dataSource name="ui_list_director_data_source" component="Magento_Ui/js/grid/provider">
         <settings>
             <storageConfig>
-                <param name="indexField" xsi:type="string">movie_id</param>
+                <param name="indexField" xsi:type="string">director_id</param>
             </storageConfig>
             <updateUrl path="mui/index/render"/>
         </settings>
         <aclResource>Magenest_Movie::movie_index</aclResource>
-        <dataProvider class="\Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="ui_list_movie_data_source">
+        <dataProvider class="\Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="ui_list_director_data_source">
             <settings>
-                <requestFieldName>movie_id</requestFieldName>
-                <primaryFieldName>movie_id</primaryFieldName>
+                <requestFieldName>director_id</requestFieldName>
+                <primaryFieldName>director_id</primaryFieldName>
             </settings>
         </dataProvider>
     </dataSource>
@@ -48,7 +48,7 @@
         </filters>
         <paging name="listing_paging"/>
     </listingToolbar>
-    <columns name="ui_list_movie_columns">
+    <columns name="ui_list_director_columns">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
                 <item name="resizeConfig" xsi:type="array">
@@ -61,11 +61,11 @@
                 <item name="config" xsi:type="array">
                     <item name="resizeEnabled" xsi:type="boolean">false</item>
                     <item name="resizeDefaultWidth" xsi:type="string">55</item>
-                    <item name="indexField" xsi:type="string">movie_id</item>
+                    <item name="indexField" xsi:type="string">director_id</item>
                 </item>
             </argument>
         </selectionsColumn>
-        <column name="movie_id" sortOrder="1">
+        <column name="director_id" sortOrder="1">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="resizeEnabled" xsi:type="boolean">false</item>
@@ -84,35 +84,11 @@
                 </item>
             </argument>
         </column>
-        <column name="description" sortOrder="3">
+        <column name="created_at" sortOrder="2">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Description</item>
-                </item>
-            </argument>
-        </column>
-        <column name="rating" sortOrder="4">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Rating</item>
-                </item>
-            </argument>
-        </column>
-        <column name="director" sortOrder="5">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Director</item>
-                </item>
-            </argument>
-        </column>
-        <column name="actor" sortOrder="6">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="filter" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Actor</item>
+                    <item name="filter" xsi:type="string">dateRange</item>
+                    <item name="label" xsi:type="string" translate="true">Created At</item>
                 </item>
             </argument>
         </column>
