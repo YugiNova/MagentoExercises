@@ -38,6 +38,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
             ->addFieldToSelect('name')
             ->addFieldToSelect('description')
             ->addFieldToSelect('rating')
+            ->addFieldToSelect('director_id')
             ->getSelect()->join(
                 'magenest_director',
                 'main_table.director_id = magenest_director.director_id',
@@ -50,7 +51,10 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
             ->join(
                 'magenest_actor',
                 'magenest_movie_actor.actor_id = magenest_actor.actor_id',
-                ['actor' => new \Zend_Db_Expr('group_concat(`magenest_actor`.name)')]
+                [
+                    'actor' => new \Zend_Db_Expr('group_concat(`magenest_actor`.name)'),
+                    'actor_id' => new \Zend_Db_Expr('group_concat(`magenest_actor`.actor_id)')
+                ]
             )
             ->group('main_table.movie_id');
         $debug = '';

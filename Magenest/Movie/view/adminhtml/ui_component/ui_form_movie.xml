@@ -16,7 +16,7 @@
             <!--            <item name="back" xsi:type="string">Vendor\UI\Block\Adminhtml\Button\Back</item>-->
             <!--            <item name="reset" xsi:type="string">Vendor\UI\Block\Adminhtml\Button\Reset</item>-->
             <!--            <item name="delete" xsi:type="string">Vendor\UI\Block\Adminhtml\Button\Delete</item>-->
-            <item name="save" xsi:type="string">Magenest\Movie\Block\Adminhtml\SaveButton</item>
+            <item name="save" xsi:type="string">Magenest\Movie\Block\Adminhtml\Button\Save</item>
         </item>
         <item name="template" xsi:type="string">templates/form/collapsible</item>
     </argument>
@@ -28,7 +28,7 @@
             <argument name="requestFieldName" xsi:type="string">id</argument>
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
-                    <item name="submit_url" xsi:type="url" path="*/*/index"/>
+                    <item name="submit_url" xsi:type="url" path="*/*/save"/>
                 </item>
             </argument>
         </argument>
@@ -50,7 +50,7 @@
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="dataType" xsi:type="string">text</item>
-                    <item name="label" xsi:type="string" translate="true">Description</item>
+                    <item name="label" xsi:type="string" translate="true">Movie Name</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="source" xsi:type="string">name</item>
                     <item name="dataScope" xsi:type="string">name</item>
@@ -92,14 +92,12 @@
             <settings>
                 <dataType>text</dataType>
                 <label translate="true">Director</label>
-                <dataScope>director</dataScope>
-                <source>director_id</source>
+                <dataScope>director_id</dataScope>
             </settings>
             <formElements>
                 <select>
                     <settings>
                         <options class="Magenest\Movie\Model\Config\Source\DirectorOption"/>
-<!--                        <caption translate="true">&#45;&#45; Please Select &#45;&#45;</caption>-->
                     </settings>
                 </select>
             </formElements>
@@ -115,7 +113,7 @@
                     <item name="formElement" xsi:type="string">select</item>
                     <item name="component" xsi:type="string">Magento_Ui/js/form/element/ui-select</item>
                     <item name="elementTmpl" xsi:type="string">ui/grid/filters/elements/ui-select</item>
-                    <item name="dataScope" xsi:type="string">custom_options_list</item>
+                    <item name="dataScope" xsi:type="string">actor_id</item>
                     <item name="filterOptions" xsi:type="boolean">true</item>
                     <item name="showCheckbox" xsi:type="boolean">true</item>
                     <item name="disableLabel" xsi:type="boolean">true</item>
@@ -133,20 +131,20 @@
             </argument>
         </field>
     </fieldset>
-    <fieldset name="actor">
-        <argument name="data" xsi:type="array">
-            <item name="config" xsi:type="array">
-                <item name="collapsible" xsi:type="boolean">true</item>
-                <item name="label" xsi:type="string" translate="true">Actors In Movie</item>
-                <item name="sortOrder" xsi:type="number">2</item>
-            </item>
-        </argument>
-        <htmlContent name="assignActor">
-            <block class="Magenest\Movie\Block\Adminhtml\AssignActor"
-                   name="adminhtml.block.movie.assignactor.container">
-                <block class="Magenest\Movie\Block\Adminhtml\AssignActor\Grid"
-                       name="adminhtml.block.movie.assignactor.grid" as="grid" />
-            </block>
-        </htmlContent>
-    </fieldset>
+<!--    <fieldset name="actor">-->
+<!--        <argument name="data" xsi:type="array">-->
+<!--            <item name="config" xsi:type="array">-->
+<!--                <item name="collapsible" xsi:type="boolean">true</item>-->
+<!--                <item name="label" xsi:type="string" translate="true">Actors In Movie</item>-->
+<!--                <item name="sortOrder" xsi:type="number">2</item>-->
+<!--            </item>-->
+<!--        </argument>-->
+<!--        <htmlContent name="assignActor">-->
+<!--            <block class="Magenest\Movie\Block\Adminhtml\AssignActor"-->
+<!--                   name="adminhtml.block.movie.assignactor.container">-->
+<!--                <block class="Magenest\Movie\Block\Adminhtml\AssignActor\Grid"-->
+<!--                       name="adminhtml.block.movie.assignactor.grid" as="grid" />-->
+<!--            </block>-->
+<!--        </htmlContent>-->
+<!--    </fieldset>-->
 </form>

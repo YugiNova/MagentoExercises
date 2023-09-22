@@ -36,6 +36,7 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
         $items = $this->collection->getItems();
         foreach ($items as $model) {
             $this->loadedData[$model->getId()] = $model->getData();
+            $this->loadedData[$model->getId()]['actor_id'] = explode(',',$model->getData('actor_id'));
         }
         $debug = '';
         return $this->loadedData;

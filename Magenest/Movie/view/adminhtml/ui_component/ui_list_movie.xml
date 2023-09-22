@@ -27,7 +27,8 @@
             <updateUrl path="mui/index/render"/>
         </settings>
         <aclResource>Magenest_Movie::movie_index</aclResource>
-        <dataProvider class="\Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="ui_list_movie_data_source">
+        <dataProvider class="\Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider"
+                      name="ui_list_movie_data_source">
             <settings>
                 <requestFieldName>movie_id</requestFieldName>
                 <primaryFieldName>movie_id</primaryFieldName>
@@ -46,6 +47,19 @@
                 </item>
             </argument>
         </filters>
+        <massaction name="listing_massaction">
+            <action name="delete">
+                <settings>
+                    <confirm>
+                        <message translate="true">Delete selected items?</message>
+                        <title translate="true">Delete items</title>
+                    </confirm>
+                    <url path="*/*/massDelete"/>
+                    <type>delete</type>
+                    <label translate="true">Delete</label>
+                </settings>
+            </action>
+        </massaction>
         <paging name="listing_paging"/>
     </listingToolbar>
     <columns name="ui_list_movie_columns">
@@ -116,5 +130,12 @@
                 </item>
             </argument>
         </column>
+        <actionsColumn name="actions" class="Magenest\Movie\Ui\Component\Movie\Column\Actions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">movie_id</item>
+                </item>
+            </argument>
+        </actionsColumn>
     </columns>
 </listing>

@@ -1,13 +1,13 @@
 <?php
 
-namespace Magenest\Movie\Block\Adminhtml;
+namespace Magenest\Movie\Block\Adminhtml\Button;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 use Magento\Ui\Component\Control\Container;
 use Magento\Backend\Block\Widget\Context;
 use function Psy\debug;
 
-class SaveButton implements ButtonProviderInterface
+class Save extends Generic implements ButtonProviderInterface
 {
     protected $context;
 
@@ -28,15 +28,14 @@ class SaveButton implements ButtonProviderInterface
                             [
                                 'targetName' => 'ui_form_movie.ui_form_movie',
                                 'actionName' => 'save',
-                                'params' => [
-                                    false
-                                ]
+                                'params' => [false]
                             ],
                         ],
                     ],
                 ],
             ],
             'class_name' => Container::SPLIT_BUTTON,
+//            'options' => $this->getOptions(),
         ];
     }
 }
