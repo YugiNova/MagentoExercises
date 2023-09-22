@@ -12,7 +12,8 @@ class UpdateCustomerFirstName implements ObserverInterface
 
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
-        $data = $observer->getData();
+        $customer = $observer->getData('customer');
         $debug = '';
+        $customer->setFirstname('Magenest');
     }
 }

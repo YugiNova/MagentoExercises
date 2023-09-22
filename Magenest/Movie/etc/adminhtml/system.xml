@@ -14,31 +14,31 @@
                    sortOrder="1" showInDefault="1" showInWebsite="1"
                    showInStore="1">
                 <label>Movie config</label>
-                <field id="text_field" translate="label" type="text"
+                <field id="text_field" translate="label" type="text" canRestore="1"
                        sortOrder="30" showInDefault="1" showInWebsite="1"
                        showInStore="1">
                     <label>Text Field</label>
                 </field>
-                <field id="yesno_field" translate="label" type="select"
+                <field id="yesno_field" translate="label" type="select" canRestore="1"
                        sortOrder="30" showInDefault="1" showInWebsite="1"
                        showInStore="1">
                     <label><![CDATA[Yes/No_Field_<strong class="colorRed">abcd</strong>]]></label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="custom_select_field" translate="label" type="select"
+                <field id="custom_select_field" translate="label" type="select" canRestore="1"
                        sortOrder="30" showInDefault="1" showInWebsite="1"
                        showInStore="1">
                     <label>Custom Select Field</label>
                     <source_model>Magenest\Movie\Model\Config\Source\CustomFieldOption</source_model>
                 </field>
-                <field id="rows_in_table_magenest_movie" translate="label" type="text"
+                <field id="rows_in_table_magenest_movie" translate="label" type="text" canRestore="1"
                        sortOrder="30" showInDefault="1" showInWebsite="1"
                        showInStore="1">
                     <label>Rows in table "magenest_movie"</label>
                     <frontend_model>Magenest\Movie\Block\TextField</frontend_model>
                     <backend_model>Magenest\Movie\Model\Config\Backend\RowsMovie</backend_model>
                 </field>
-                <field id="rows_in_table_magenest_actor" translate="label" type="text"
+                <field id="rows_in_table_magenest_actor" translate="label" type="text" canRestore="1"
                        sortOrder="30" showInDefault="1" showInWebsite="1"
                        showInStore="1">
                     <label>Rows in table "magenest_actor"</label>
