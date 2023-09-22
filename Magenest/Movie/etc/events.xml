@@ -5,7 +5,7 @@
         <observer name="update_customer_first_name"
                   instance="Magenest\Movie\Observer\UpdateCustomerFirstName" />
     </event>
-    <event name="movie_save_after">
+    <event name="magenest_movie_save_before">
         <observer name="update_movie_rating"
                   instance="Magenest\Movie\Observer\UpdateMovieRating" />
     </event>

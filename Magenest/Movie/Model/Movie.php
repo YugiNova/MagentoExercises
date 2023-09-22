@@ -4,6 +4,7 @@ namespace Magenest\Movie\Model;
 
 class Movie extends \Magento\Framework\Model\AbstractModel
 {
+    protected $_eventPrefix = 'magenest_movie';
     /**
      * @param \Magento\Framework\Model\Context $context
      * @param \Magento\Framework\Registry $registry

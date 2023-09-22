@@ -15,7 +15,6 @@ class Save extends \Magento\Backend\App\Action
     protected $context;
     protected $movieFactory;
     protected $resource;
-    public  $movie;
 
     public function __construct(
         Context              $context,
@@ -50,7 +49,6 @@ class Save extends \Magento\Backend\App\Action
                 $this->createMovie($data);
                 $this->messageManager->addSuccessMessage(__("New Movie Add Successfully"));
             }
-            $this->_eventManager->dispatch('movie_save_after',['movie'=>$this->movie]);
         }catch (\Exception $e)
         {
             $this->messageManager->addErrorMessage($e->getMessage());
@@ -87,7 +85,6 @@ class Save extends \Magento\Backend\App\Action
             'magenest_movie_actor',
             $actorData
         );
-        $this->movie = $newMovie;
     }
 
     /**
@@ -120,7 +117,6 @@ class Save extends \Magento\Backend\App\Action
             'magenest_movie_actor',
             $actorData
         );
-        $this->movie = $updateMovie;
     }
 
     protected function _isAllowed()
