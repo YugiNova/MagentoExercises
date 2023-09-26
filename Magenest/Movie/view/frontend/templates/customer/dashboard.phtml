@@ -1,0 +1,42 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \Magenest\Movie\Block\Customer\Dashboard $block * */
+?>
+<div class="block block-dashboard-info">
+    <div class="block-title"><strong><?= __('Dashboard') ?></strong></div>
+    <div class="block-content" style="display: flex; flex-direction: row; justify-content: space-between;align-items: start">
+        <div class="block">
+            <strong class="box-title">
+                <span><?= __('Avatar') ?></span>
+            </strong>
+            <div class="box-content">
+                <address>
+                    <img src="<?= $block->getCustomerAvatar() ?>" width="40%" height="auto"/>
+                </address>
+            </div>
+        </div>
+        <div class="block">
+            <strong class="box-title">
+                <span><?= __('Information') ?></span>
+            </strong>
+            <div class="box-content">
+                <p>
+                    <span style="font-weight: bold">First name: </span>
+                    <?= $block->getCurrentCustomer()->getFirstname() ?>
+                </p>
+                <p>
+                    <span style="font-weight: bold">Email: </span>
+                    <?= $block->getCurrentCustomer()->getEmail() ?>
+                </p>
+                <p>
+                    <span style="font-weight: bold">Gender: </span>
+                    <?= $block->getCurrentCustomer()->getGender() == 0 ? 'Female' : 'Male' ?>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
