@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magenest\Movie\Model\ResourceModel\Movie\Grid\Collection">
         <arguments>
             <argument name="mainTable" xsi:type="string">magenest_movie</argument>
@@ -8,13 +9,15 @@
             <argument name="resourceModel" xsi:type="string">Magenest\Movie\Model\ResourceModel\Movie</argument>
         </arguments>
     </type>
-    <virtualType name="Magenest\Movie\Model\ResourceModel\Actor\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+    <virtualType name="Magenest\Movie\Model\ResourceModel\Actor\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
             <argument name="mainTable" xsi:type="string">magenest_actor</argument>
             <argument name="resourceModel" xsi:type="string">Magenest\Movie\Model\ResourceModel\Actor</argument>
         </arguments>
     </virtualType>
-    <virtualType name="Magenest\Movie\Model\ResourceModel\Director\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+    <virtualType name="Magenest\Movie\Model\ResourceModel\Director\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
         <arguments>
             <argument name="mainTable" xsi:type="string">magenest_director</argument>
             <argument name="resourceModel" xsi:type="string">Magenest\Movie\Model\ResourceModel\Director</argument>
@@ -23,10 +26,29 @@
     <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
         <arguments>
             <argument name="collections" xsi:type="array">
-                <item name="ui_list_movie_data_source" xsi:type="string">Magenest\Movie\Model\ResourceModel\Movie\Grid\Collection</item>
-                <item name="ui_list_actor_data_source" xsi:type="string">Magenest\Movie\Model\ResourceModel\Actor\Grid\Collection</item>
-                <item name="ui_list_director_data_source" xsi:type="string">Magenest\Movie\Model\ResourceModel\Director\Grid\Collection</item>
+                <item name="ui_list_movie_data_source" xsi:type="string">
+                    Magenest\Movie\Model\ResourceModel\Movie\Grid\Collection
+                </item>
+                <item name="ui_list_actor_data_source" xsi:type="string">
+                    Magenest\Movie\Model\ResourceModel\Actor\Grid\Collection
+                </item>
+                <item name="ui_list_director_data_source" xsi:type="string">
+                    Magenest\Movie\Model\ResourceModel\Director\Grid\Collection
+                </item>
             </argument>
         </arguments>
+    </type>
+    <!--    <type name="Magento\Checkout\Block\Cart\Item\Renderer">-->
+    <!--        <plugin name="magenest_movie_cart_item_render" type="Magenest\Movie\Plugin\CartItemRender" sortOrder="1"-->
+    <!--                disabled="false"/>-->
+    <!--    </type>-->
+    <!--    <type name="Magento\Checkout\Model\Cart">-->
+    <!--        <plugin name="magenest_movie_add_product_to_cart" type="Magenest\Movie\Plugin\AddProductToCart" sortOrder="1"-->
+    <!--                disabled="false"/>-->
+    <!--    </type>-->
+    <type name="Magento\Checkout\CustomerData\DefaultItem">
+        <plugin name="magenest_movie_update_default_item" type="Magenest\Movie\Plugin\UpdateDefaultCartItem"
+                sortOrder="1"
+                disabled="false"/>
     </type>
 </config>
