@@ -1,0 +1,21 @@
+<button id="alert-button">Open alert</button>
+
+<div id="popup-modal">
+    <form method="post" class="popup-modal-content">
+        <input type="text" name="email" class="customer-email" placeholder="Email"/>
+        <input type="password" name="password" class="customer-password" placeholder="Password"/>
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<button id="modal-button">
+    Open modal
+</button>
+
+<script type="text/x-magento-init">
+    {
+        "#modal-button": {
+            "custom-modal": {}
+        }
+    }
+</script>
