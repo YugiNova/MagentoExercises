@@ -84,6 +84,8 @@
                     <item name="dataScope" xsi:type="string">rating</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
+                        <item name="validate-number" xsi:type="boolean">true</item>
+                        <item name="validate-rating-input" xsi:type="boolean">true</item>
                     </item>
                 </item>
             </argument>
@@ -123,6 +125,7 @@
                     <item name="required" xsi:type="boolean">true</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">false</item>
+                        <item name="validate-actor-input" xsi:type="boolean">true</item>
                     </item>
                     <item name="listens" xsi:type="array">
                         <item name="${ $.namespace }.${ $.namespace }:responseData" xsi:type="string">setParsed</item>

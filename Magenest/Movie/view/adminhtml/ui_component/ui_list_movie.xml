@@ -106,11 +106,12 @@
                 </item>
             </argument>
         </column>
-        <column name="rating" sortOrder="4">
+        <column name="rating" sortOrder="4" class="Magenest\Movie\Ui\Component\Movie\Column\Rating">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Rating</item>
+                    <item name="bodyTmpl" xsi:type="string">ui/grid/cells/html</item>
                 </item>
             </argument>
         </column>

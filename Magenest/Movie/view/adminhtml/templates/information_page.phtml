@@ -1,0 +1,53 @@
+<?php /** @var Magenest\Movie\Block\Adminhtml\InformationPage $block */ ?>
+
+
+<section class="admin__page-section order-view-account-information">
+    <div class="admin__page-section-title">
+        <span class="title">Reports</span>
+    </div>
+    <div class="admin__page-section-content">
+        <div class="admin__page-section-item order-information">
+            <div class="admin__page-section-item-title">
+                <span class="title">
+                    Modules report
+                </span>
+            </div>
+            <div class="admin__page-section-item-content">
+                <p><strong>Total modules: </strong><?= $block->getModuleList() ?></p>
+                <p><strong>Custom modules: </strong><?= $block->getCustomModuleCount() ?></p>
+            </div>
+        </div>
+
+        <div class="admin__page-section-item order-account-information">
+            <div class="admin__page-section-item-title">
+                <span class="title">Overall report</span>
+            </div>
+            <div class="admin__page-section-item-content">
+                <table class="admin__table-secondary order-account-information-table">
+                    <tbody>
+                    <tr>
+                        <th>Customers</th>
+                        <td><?= $block->getCustomerCount() ?></td>
+                    </tr>
+                    <tr>
+                        <th>Products</th>
+                        <td><?= $block->getProductCount() ?></td>
+                    </tr>
+                    <tr>
+                        <th>Orders</th>
+                        <td><?= $block->getOrderCount() ?></td>
+                    </tr>
+                    <tr>
+                        <th>Invoices</th>
+                        <td><?= $block->getInvoiceCount() ?></td>
+                    </tr>
+                    <tr>
+                        <th>Credit Memo</th>
+                        <td><?= $block->getCreditmemoCount() ?></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

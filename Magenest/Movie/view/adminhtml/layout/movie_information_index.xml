@@ -1,12 +1,9 @@
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-   <head>
-       <css src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" src_type="url"/>
-       <css src="Magenest_Movie::css/star.css"/>
-   </head>
     <body>
         <referenceContainer name="content">
-            <uiComponent name="ui_list_movie"/>
+            <block class="Magenest\Movie\Block\Adminhtml\InformationPage" name="magenest_movie_information_page"
+                    template="Magenest_Movie::information_page.phtml"/>
         </referenceContainer>
     </body>
 </page>

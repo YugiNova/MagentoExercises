@@ -1,0 +1,6 @@
+.custom-star {
+    font-size: 2rem !important;
+}
+.custom-star.checked {
+    color: orange;
+}
