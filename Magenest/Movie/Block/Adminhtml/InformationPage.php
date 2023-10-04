@@ -6,6 +6,7 @@ use Magento\Framework\View\Element\Template;
 use \Magento\Framework\Module\FullModuleList;
 use \Magento\Customer\Model\CustomerFactory;
 use \Magento\Catalog\Model\ProductFactory;
+use Magento\Sales\Model\OrderFactory;
 use \Magento\Sales\Model\ResourceModel\Order\CollectionFactory;
 use \Magento\Sales\Model\Order\InvoiceFactory;
 use \Magento\Sales\Model\ResourceModel\Order\Creditmemo\CollectionFactory as CreditmemoCollectionFactory;
@@ -96,7 +97,9 @@ class InformationPage extends Template
 
     public  function getCreditmemoCount()
     {
-        $invoices = $this->creditmemoCollectionFactory->create();
+        //$invoices = $this->creditmemoCollectionFactory->create();
+        $invoices = $this->orderCollectionFactory->create()
+                    ->addFieldToFilter('status',\Magento\Sales\Model\Order::STATE_CLOSED);
         return $invoices->getSize();
     }
 }
