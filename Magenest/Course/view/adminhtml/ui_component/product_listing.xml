@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <columns name="product_columns">
+        <column name="course_start_time" class="Magenest\Course\Ui\Filter\Date">
+            <settings>
+                <label translate="true">Course Active From</label>
+                <sortable>true</sortable>
+                <filter>dateRange</filter>
+                <addField>true</addField>
+            </settings>
+        </column>
+        <column name="course_end_time" class="Magenest\Course\Ui\Filter\Date">
+            <settings>
+                <filter>dateRange</filter>
+                <label translate="true">Course Active To</label>
+                <timezone>false</timezone>
+                <addField>true</addField>
+            </settings>
+        </column>
+    </columns>
+</listing>

@@ -109,8 +109,11 @@ class CourseTimeUpdate extends AbstractModifier
                 'scopeLabel' => null,
                 'additionalClasses' => 'admin__field-date',
                 'sortOrder' => 2,
-                'id' => 'course_start_time',
+                'id' => 'course_end_time',
                 'required' => '0',
+                'options' => [
+                    'showsTime' => true,
+                ]
             ]
         );
         $meta = $this->arrayManager->merge(

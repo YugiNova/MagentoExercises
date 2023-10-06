@@ -24,8 +24,6 @@ class MovieList extends Template
     public function getMovies()
     {
         $movies = $this->movieFactory->create()->getCollection();
-        $sql = $movies->getData();
-
         return $movies;
     }
 

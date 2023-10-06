@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="customer-detail">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Customer Detail</item>
+                <item name="sortOrder" xsi:type="number">0</item>
+            </item>
+        </argument>
+        <htmlContent name="customer_detail_tab_view">
+            <block class="Magenest\Course\Block\Customer\Avatar" name="customer_avatar"
+                   template="Magenest_Course::customer_avatar.phtml"/>
+        </htmlContent>
+    </fieldset>
+</form>

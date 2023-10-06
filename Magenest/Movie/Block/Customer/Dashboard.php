@@ -21,14 +21,14 @@ class Dashboard extends Template
 
     public function getCusomterMeidaUrl()
     {
-        $baseUrl = $this->_urlBuilder->getBaseUrl();
+        $baseUrl = 'http://local.magento.com/';
         $mediaUrl = $baseUrl . 'media/customer';
         return $mediaUrl;
     }
     public function getCustomerAvatar()
     {
-        $avatarPath = $this->currentCustomer->getCustomer()->getCustomAttribute('avatar')->getValue();
-        $avatarUrl = $this->getCusomterMeidaUrl() . $avatarPath;
+        $avatarPath = $this->currentCustomer->getCustomer()->getCustomAttribute('avatar');
+        $avatarUrl =  $avatarPath ? $this->getCusomterMeidaUrl() . $avatarPath->getValue() : "";
 
         return $avatarUrl;
     }

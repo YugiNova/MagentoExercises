@@ -1,0 +1,26 @@
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="Magenest\Course\Block\Widget\CustomWidget" id="magenest_custom_widget">
+        <label>Magenest Widget</label>
+        <description>Magenest custom widget</description>
+        <parameters>
+            <parameter name="title" xsi:type="text" required="true" visible="true" sort_order="10">
+                <label>Label</label>
+            </parameter>
+            <parameter name="movie_count" xsi:type="select" visible="true" required="true" sort_order="20">
+                <label translate="true">Number of movie to show</label>
+                <options>
+                    <option name="5" value="5">
+                        <label>5 movies</label>
+                    </option>
+                    <option name="10" value="10" selected="true">
+                        <label>10 movies</label>
+                    </option>
+                    <option name="15" value="15">
+                        <label>15 movies</label>
+                    </option>
+                </options>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

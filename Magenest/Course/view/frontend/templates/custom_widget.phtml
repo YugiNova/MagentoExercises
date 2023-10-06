@@ -1,0 +1,30 @@
+<?php
+/** @var \Magento\Framework\View\TemplateEngineInterface $this */
+/** @var \Magenest\Course\Block\Widget\CustomWidget $block */
+/** @var \Magento\Csp\Api\InlineUtilInterface $csp */
+/** @var \Magento\Framework\Escaper $escaper */
+/** @var \Magento\Framework\View\Helper\SecureHtmlRenderer $secureRenderer */
+?>
+<table border="1">
+    <thead>
+    <td>ID</td>
+    <td>Movie name</td>
+    <td>Description</td>
+    <td>Rating</td>
+    <td>Director</td>
+    <td>Actor</td>
+    </thead>
+    <tbody>
+    <?php foreach($block->getMovieList() as $movie):  ?>
+        <tr>
+            <td><?= $movie['movie_id'] ?></td>
+            <td><?= $movie['name'] ?></td>
+            <td><?= $movie['description'] ?></td>
+            <td><?= $movie['rating'] ?></td>
+            <td><?= $movie['director'] ?></td>
+            <td><?= $movie['actor'] ?></td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+

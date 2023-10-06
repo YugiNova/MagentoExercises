@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation=
+    "urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="course" translate="label" type="text" sortOrder="102"
+                 showInDefault="1" showInStore="1" showInWebsite="1">
+            <label>Course</label>
+            <tab>magenest</tab>
+            <resource>Magenest_Movie::movie_section</resource>
+            <group id="course_config" translate="label" type="text"
+                   sortOrder="1" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Course config</label>
+                <field id="course_by_customer" translate="label" sortOrder="102"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Course by customer</label>
+                    <comment>Time field must be enter in "HH:MM:SS" 24 hours format. Example: 10:10:24, 01:10:24</comment>
+                    <frontend_model>Magenest\Course\Block\Config\TableConfig</frontend_model>
+                    <backend_model>Magento\Config\Model\Config\Backend\Serialized\ArraySerialized</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
