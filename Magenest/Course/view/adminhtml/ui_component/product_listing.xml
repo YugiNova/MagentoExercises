@@ -13,6 +13,7 @@
                 <sortable>true</sortable>
                 <filter>dateRange</filter>
                 <addField>true</addField>
+                <dataType>date</dataType>
             </settings>
         </column>
         <column name="course_end_time" class="Magenest\Course\Ui\Filter\Date">
@@ -21,6 +22,7 @@
                 <label translate="true">Course Active To</label>
                 <timezone>false</timezone>
                 <addField>true</addField>
+                <dataType>date</dataType>
             </settings>
         </column>
     </columns>

@@ -90,6 +90,7 @@ class Date extends Column
                     'date' => [
                         'options' => [
                             'dateFormat' => $config['dateFormat'] ?? $this->timezone->getDateFormatWithLongYear(),
+                            'timeFormat' =>  "HH:mm:ss",
                             'showsTime' => true
                         ]
                     ]
@@ -100,5 +101,11 @@ class Date extends Column
         $this->setData('config', $config);
 
         parent::prepare();
+    }
+
+    public function prepareDataSource(array $dataSource)
+    {
+
+        return $dataSource;
     }
 }

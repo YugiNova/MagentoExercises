@@ -1,0 +1,8 @@
+
+<div class="file-uploader-summary">
+    <div class="file-uploader-filename">
+        <!-- ko if: $file.url --><a target="_blank" data-bind="attr: {href: $file.url}, text: $file.name"></a><!-- /ko -->
+        <!-- ko if: !$file.url --><!-- /ko -->
+        (<!-- ko text: $parent.formatSize($file.size) --><!-- /ko -->)
+    </div>
+</div>

@@ -1,0 +1,17 @@
+{
+    "course_files": {
+        "column": {
+            "file_id": true,
+            "product_id": true,
+            "file_label": true,
+            "file_url": true,
+            "file_type": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "COURSE_FILES_FILE_ID_CATALOG_PRODUCT_ENTITY_ENTITY_ID": true
+        }
+    }
+}

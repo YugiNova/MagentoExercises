@@ -1,0 +1,16 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="course_files">
+        <column xsi:type="int" name="file_id" unsigned="true" identity="true" nullable="false" comment="File Id"/>
+        <column xsi:type="int" name="product_id" unsigned="true" nullable="false" comment="Product Id"/>
+        <column xsi:type="varchar" name="file_label" nullable="false" length="255" comment="File label"/>
+        <column xsi:type="varchar" name="file_url" nullable="false" length="255" comment="File Link"/>
+        <column xsi:type="varchar" name="file_type" nullable="false" length="255" comment="File Type"/>
+        <column name="created_at" nullable="false" xsi:type="timestamp" default="CURRENT_TIMESTAMP" on_update="false"/>
+        <column name="updated_at" nullable="true" xsi:type="timestamp" default="CURRENT_TIMESTAMP" on_update="true"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="file_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="COURSE_FILE_PRODUCT" table="course_files" column="product_id" referenceTable="catalog_product_entity" referenceColumn="entity_id" onDelete="CASCADE"/>
+    </table>
+</schema>

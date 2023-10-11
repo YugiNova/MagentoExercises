@@ -59,7 +59,7 @@ class CourseTimeUpdate extends AbstractModifier
         );
 
         $meta = $this->arrayManager->merge(
-            'producy-details/arguments/data/config',
+            'product-details/arguments/data/config',
             $meta,
             [
                 'sortOrder' => 10,
@@ -133,6 +133,6 @@ class CourseTimeUpdate extends AbstractModifier
             $this->arrayManager->get($toFieldPath, $meta)
         );
 
-        return $this->arrayManager->remove($toContainerPath, $meta);
+            return $this->arrayManager->remove($toContainerPath, $meta);
     }
 }
