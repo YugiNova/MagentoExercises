@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Magento\Customer\Block\Adminhtml\Group\Edit\Form"
+                type="Magenest\KnockoutJS\Block\Adminhtml\CustomerGroup\Form"/>
+    <preference for="Magento\Customer\Controller\Adminhtml\Group\Save"
+                type="Magenest\KnockoutJS\Plugin\SaveCustomerGroup"/>
+
+    <virtualType name="Magenest\KnockoutJS\Model\ResourceModel\Banner\Grid\Collection"
+                 type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magenest_banner</argument>
+            <argument name="resourceModel" xsi:type="string">Magenest\KnockoutJS\Model\ResourceModel\Banner</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="ui_list_banner_data_source" xsi:type="string">
+                    Magenest\KnockoutJS\Model\ResourceModel\Banner\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Model\ImageUploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">banner/tmp</argument>
+            <argument name="basePath" xsi:type="string">banner</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

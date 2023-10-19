@@ -1,0 +1,14 @@
+<?php
+/** @var \Magenest\Blog\Block\Blog\BlogList $block */
+?>
+<p>list</p>
+<?php foreach ($block->getBlogs() as $blog): ?>
+    <?php if ($blog['status'] == "true"): ?>
+        <div>
+            <h3><?= $blog['title'] ?></h3>
+            <p><?= $blog['description'] ?></p>
+            <p><?= $blog['author'] ?></p>
+            <a href="<?= $block->getBaseUrl() . "/" . $blog['url_rewrite'] ?>">See detail</a>
+        </div>
+    <?php endif; ?>
+<?php endforeach; ?>

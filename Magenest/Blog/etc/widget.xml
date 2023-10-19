@@ -1,0 +1,19 @@
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+    <widget class="Magenest\Blog\Block\Widget\Banner\BannerWidget" id="magenest_banner_widget">
+        <label>B2B Banner Widget</label>
+        <description>Magenest Banner widget</description>
+        <parameters>
+            <parameter name="banner_uploader" xsi:type="block" visible="true" required="false">
+                <label translate="true">Banner uploader</label>
+                <block class="Magenest\Blog\Block\Widget\Banner\Uploader">
+                    <data>
+                        <item name="button" xsi:type="array">
+                            <item name="open" xsi:type="string">Choose Image...</item>
+                        </item>
+                    </data>
+                </block>
+            </parameter>
+        </parameters>
+    </widget>
+</widgets>

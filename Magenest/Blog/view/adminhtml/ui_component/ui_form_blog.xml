@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">ui_form_blog.ui_form_blog_data_source</item>
+            <item name="deps" xsi:type="string">ui_form_blog.ui_form_blog_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Movie Information</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">ui_form_blog</item>
+        </item>
+        <item name="spinner" xsi:type="string">general_information</item>
+        <item name="buttons" xsi:type="array">
+            <!--            <item name="back" xsi:type="string">Vendor\UI\Block\Adminhtml\Button\Back</item>-->
+            <!--            <item name="reset" xsi:type="string">Vendor\UI\Block\Adminhtml\Button\Reset</item>-->
+            <!--            <item name="delete" xsi:type="string">Vendor\UI\Block\Adminhtml\Button\Delete</item>-->
+            <item name="save" xsi:type="string">Magenest\Blog\Block\Adminhtml\Blog\Button\Save</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <dataSource name="ui_form_blog_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Magenest\Blog\Model\ResourceModel\Blog\DataProvider</argument>
+            <argument name="name" xsi:type="string">ui_form_blog_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">blog_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="*/*/save"/>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <fieldset name="general_information">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="collapsible" xsi:type="boolean">true</item>
+                <item name="opened" xsi:type="boolean">true</item>
+                <item name="label" xsi:type="string" translate="true">General Information</item>
+                <item name="sortOrder" xsi:type="number">1</item>
+            </item>
+        </argument>
+        <field name="title">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Title</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">title</item>
+                    <item name="dataScope" xsi:type="string">title</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="content" sortOrder="50" formElement="wysiwyg">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="wysiwygConfigData" xsi:type="array">
+                        <item name="height" xsi:type="string">100px</item>
+                        <item name="add_variables" xsi:type="boolean">true</item>
+                        <item name="add_widgets" xsi:type="boolean">true</item>
+                        <item name="add_images" xsi:type="boolean">true</item>
+                        <item name="add_directives" xsi:type="boolean">true</item>
+                        <item name="is_pagebuilder_enabled" xsi:type="boolean">false</item>
+                    </item>
+                    <item name="source" xsi:type="string">content</item>
+                    <item name="dataScope" xsi:type="string">content</item>
+                </item>
+            </argument>
+            <settings>
+                <label>Content</label>
+            </settings>
+            <formElements>
+                <wysiwyg>
+                    <settings>
+                        <rows>8</rows>
+                        <wysiwyg>true</wysiwyg>
+                    </settings>
+                </wysiwyg>
+            </formElements>
+        </field>
+        <field name="description">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Description</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">description</item>
+                    <item name="dataScope" xsi:type="string">description</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="url_rewrite">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Url Rewrite</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">url_rewrite</item>
+                    <item name="dataScope" xsi:type="string">url_rewrite</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="status" formElement="checkbox">
+            <settings>
+                <label translate="true">Status</label>
+                <tooltip>
+                    <description translate="true">Enable/Disable This Post</description>
+                </tooltip>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <prefer>toggle</prefer>
+                        <valueMap>
+                            <map name="false" xsi:type="boolean">false</map>
+                            <map name="true" xsi:type="boolean">true</map>
+                        </valueMap>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+    </fieldset>
+<!--    <fieldset name="actor">-->
+<!--        <argument name="data" xsi:type="array">-->
+<!--            <item name="config" xsi:type="array">-->
+<!--                <item name="collapsible" xsi:type="boolean">true</item>-->
+<!--                <item name="label" xsi:type="string" translate="true">Actors In Movie</item>-->
+<!--                <item name="sortOrder" xsi:type="number">2</item>-->
+<!--            </item>-->
+<!--        </argument>-->
+<!--        <htmlContent name="assignActor">-->
+<!--            <block class="Magenest\Movie\Block\Adminhtml\AssignActor"-->
+<!--                   name="adminhtml.block.blog.assignactor.container">-->
+<!--                <block class="Magenest\Movie\Block\Adminhtml\AssignActor\Grid"-->
+<!--                       name="adminhtml.block.blog.assignactor.grid" as="grid" />-->
+<!--            </block>-->
+<!--        </htmlContent>-->
+<!--    </fieldset>-->
+</form>

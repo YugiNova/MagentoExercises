@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation=
+    "urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="background_color" translate="label" type="text" sortOrder="103"
+                 showInDefault="1" showInStore="1" showInWebsite="1">
+            <label>Background Color</label>
+            <tab>magenest</tab>
+            <resource>Magenest_Movie::movie_section</resource>
+            <group id="background_color_config" translate="label" type="text"
+                   sortOrder="1" showInDefault="1" showInWebsite="1"
+                   showInStore="1">
+                <label>Background color config</label>
+                <field id="background_color_options" translate="label" sortOrder="102"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Options</label>
+                    <frontend_model>Magenest\KnockoutJS\Model\Config\ColorOption\Frontend</frontend_model>
+                    <backend_model>Magenest\KnockoutJS\Model\Config\ColorOption\Backend</backend_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

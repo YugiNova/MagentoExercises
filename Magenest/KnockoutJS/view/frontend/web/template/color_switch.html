@@ -1,0 +1,5 @@
+<div style="width: 70px;position: absolute;top:5px;">
+    <select name="bg-color" id="bg-color" data-bind="event:{change: updateColor},value: selectedColor,foreach: colorOptions">
+        <option data-bind="text: color_label, value:color_value, style: { background: color_value }"></option>
+    </select>
+</div>

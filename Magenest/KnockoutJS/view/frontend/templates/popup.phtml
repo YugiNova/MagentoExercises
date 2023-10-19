@@ -1,0 +1,34 @@
+<h1 class="this-is-popup">This is popup</h1>
+
+<div id="modal">
+    <?= $block->getPopupContent() ?>
+</div>
+
+<script type="text/javascript">
+    require([
+        "jquery",
+        "Magento_Ui/js/modal/modal"
+    ],function($, modal) {
+
+        var options = {
+            type: 'popup',
+            responsive: true,
+            title: 'Main title',
+            buttons: [{
+                text: $.mage.__('Ok'),
+                class: '',
+                click: function () {
+                    this.closeModal();
+                }
+            }]
+        };
+
+        var popup = modal(options, $('#modal'));
+        $(document).ready(function() {
+            $('#modal').modal('openModal');
+        })
+        // $(document).click(function() {
+        //     $('#modal').modal('openModal');
+        // });
+    });
+</script>

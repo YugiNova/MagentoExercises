@@ -1,0 +1,47 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="magenest_blog">
+        <column xsi:type="int" name="blog_id" unsigned="true" identity="true" nullable="false" comment="Blog Id"/>
+        <column xsi:type="int" name="author_id" unsigned="true" nullable="false" comment="Author Id"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Blog Title"/>
+        <column xsi:type="text" name="description" nullable="false" comment="Blog Description"/>
+        <column xsi:type="varchar" name="content" nullable="false" length="512" comment="Blog Content"/>
+        <column xsi:type="text" name="url_rewrite" nullable="false" comment="Blog Url Rewrite"/>
+        <column xsi:type="varchar" name="status" nullable="false" length="255" comment="Blog Status"/>
+        <column name="created_at" nullable="false" xsi:type="timestamp" default="CURRENT_TIMESTAMP" on_update="false"/>
+        <column name="updated_at" nullable="true" xsi:type="timestamp" default="CURRENT_TIMESTAMP" on_update="true"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="blog_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="BLOG_AUTHOR_ADMIN" table="magenest_blog" column="author_id"
+                    referenceTable="admin_user" referenceColumn="user_id" onDelete="CASCADE"/>
+        <index referenceId="INDEX_BLOG_TITLE" indexType="btree">
+            <column name="title"/>
+        </index>
+        <index referenceId="INDEX_BLOG_CONTENT" indexType="btree">
+            <column name="content"/>
+        </index>
+    </table>
+
+    <table name="magenest_category">
+        <column xsi:type="int" name="category_id" unsigned="true" identity="true" nullable="false" comment="Blog Category Id"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Blog Category Name"/>
+        <column name="created_at" nullable="false" xsi:type="timestamp" default="CURRENT_TIMESTAMP" on_update="false"/>
+        <column name="updated_at" nullable="true" xsi:type="timestamp" default="CURRENT_TIMESTAMP" on_update="true"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="category_id"/>
+        </constraint>
+        <index referenceId="INDEX_BLOG_CATEGORY_NAME" indexType="btree">
+            <column name="name"/>
+        </index>
+    </table>
+
+    <table name="magenest_blog_category">
+        <column xsi:type="int" name="blog_id" unsigned="true" nullable="false" comment="Blog Id"/>
+        <column xsi:type="int" name="category_id" unsigned="true" nullable="false" comment="Blog Category Id"/>
+        <constraint xsi:type="foreign" referenceId="BLOG_PIVOT_BLOG" table="magenest_blog_category" column="blog_id"
+                    referenceTable="magenest_blog" referenceColumn="blog_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="BLOG_PIVOT_CATEGORY" table="magenest_blog_category" column="category_id"
+                    referenceTable="magenest_category" referenceColumn="category_id" onDelete="CASCADE"/>
+    </table>
+</schema>

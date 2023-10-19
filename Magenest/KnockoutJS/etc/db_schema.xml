@@ -1,0 +1,27 @@
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="magenest_popup">
+        <column xsi:type="int" name="popup_id" unsigned="true" identity="true" nullable="false" comment="Popup Id"/>
+        <column xsi:type="int" name="customer_group_id" unsigned="true" nullable="false" comment="Customer Group Id"/>
+        <column xsi:type="text" name="content" nullable="false" comment="Popup Content"/>
+        <column name="created_at" nullable="false" xsi:type="timestamp" default="CURRENT_TIMESTAMP" on_update="false"/>
+        <column name="updated_at" nullable="true" xsi:type="timestamp" default="CURRENT_TIMESTAMP" on_update="true"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="popup_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="POPUP_CUSTOMER_GROUP" table="magenest_popup" column="popup_id"
+                    referenceTable="customer_group" referenceColumn="customer_group_id" onDelete="CASCADE"/>
+    </table>
+
+    <table name="magenest_banner">
+        <column xsi:type="int" name="banner_id" unsigned="true" identity="true" nullable="false" comment="Banner Id"/>
+        <column xsi:type="boolean" name="enable" nullable="false" comment="Enable banner"/>
+        <column xsi:type="varchar" name="title" length="255" nullable="false" comment="Popup Content"/>
+        <column xsi:type="varchar" name="image_url" length="512" nullable="false" comment="Popup Content"/>
+        <column name="created_at" nullable="false" xsi:type="timestamp" default="CURRENT_TIMESTAMP" on_update="false"/>
+        <column name="updated_at" nullable="true" xsi:type="timestamp" default="CURRENT_TIMESTAMP" on_update="true"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="banner_id"/>
+        </constraint>
+    </table>
+</schema>

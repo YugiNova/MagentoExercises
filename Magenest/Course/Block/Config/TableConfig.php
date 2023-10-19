@@ -4,7 +4,6 @@ namespace Magenest\Course\Block\Config;
 
 use Magento\CatalogInventory\Block\Adminhtml\Form\Field\Customergroup;
 use Magento\Config\Block\System\Config\Form\Field\FieldArray\AbstractFieldArray;
-
 class TableConfig extends AbstractFieldArray
 {
     /**
@@ -68,6 +67,7 @@ class TableConfig extends AbstractFieldArray
                 'class' => 'required-entry validate-time-format'
             ]
         );
+
         $this->_addAfter = false;
         $this->_addButtonLabel = __('Add Minimum Qty');
     }
@@ -81,7 +81,8 @@ class TableConfig extends AbstractFieldArray
     protected function _prepareArrayRow(\Magento\Framework\DataObject $row)
     {
         $optionExtraAttr = [];
-        $optionExtraAttr['option_' . $this->_getGroupRenderer()->calcOptionHash($row->getData('customer_group_id'))] =
+        $optionValue = $this->_getGroupRenderer()->calcOptionHash($row->getData('customer_group_id'));
+        $optionExtraAttr['option_' . $optionValue] =
             'selected="selected"';
         $row->setData(
             'option_extra_attrs',

@@ -1,0 +1,18 @@
+<div id="custom-component" data-bind="scope:'colorSwitchComponent'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "colorSwitchComponent": {
+                            "component": "Magenest_KnockoutJS/js/color_switch",
+                            "template" : "Magenest_KnockoutJS/color_switch",
+                            "colorSwitchComponent": <?= $block->getColorOptionsJson(); ?>
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</div>

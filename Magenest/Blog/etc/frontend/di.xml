@@ -1,0 +1,5 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
+        <plugin name="magenest_blog_checkout_layout" type="Magenest\Blog\Plugin\LayoutProcessor" sortOrder="10" disabled="false"  />
+    </type>
+</config>

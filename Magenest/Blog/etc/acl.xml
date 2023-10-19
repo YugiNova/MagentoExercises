@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation=
+    "urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magenest_Blog::blog_menu" title="Blog" sortOrder="0">
+                    <resource id="Magenest_Blog::blog_index" title="Blog Index" sortOrder="1">
+                        <resource id="Magenest_Blog::blog_form" title="Blog form" sortOrder="1"/>
+                    </resource>
+                    <resource id="Magenest_Blog::blog_category" title="Blog Category Index" sortOrder="2">
+                        <resource id="Magenest_Blog::blog_category_form" title="Blog Category form" sortOrder="1"/>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
