@@ -96,6 +96,7 @@ class CourseTimeUpdate extends AbstractModifier
                 'sortOrder' => 1,
                 'required' => '0',
                 'id' => 'course_start_time',
+                'component' => 'Magenest_Course/js/custom-date',
                 'options' => [
                     'showsTime' => true,
                 ]
@@ -111,6 +112,7 @@ class CourseTimeUpdate extends AbstractModifier
                 'sortOrder' => 2,
                 'id' => 'course_end_time',
                 'required' => '0',
+                'component' => 'Magenest_Course/js/custom-date',
                 'options' => [
                     'showsTime' => true,
                 ]
@@ -133,6 +135,6 @@ class CourseTimeUpdate extends AbstractModifier
             $this->arrayManager->get($toFieldPath, $meta)
         );
 
-            return $this->arrayManager->remove($toContainerPath, $meta);
+        return $this->arrayManager->remove($toContainerPath, $meta);
     }
 }

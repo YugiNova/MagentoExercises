@@ -1,4 +1,5 @@
 <?php
+
 namespace Magenest\Course\Setup\Patch\Data;
 
 use Magento\Eav\Setup\EavSetup;
@@ -14,8 +15,9 @@ class AddCourseTime implements DataPatchInterface
 
     public function __construct(
         ModuleDataSetupInterface $moduleDataSetup,
-        EavSetupFactory $eavSetupFactory
-    ) {
+        EavSetupFactory          $eavSetupFactory
+    )
+    {
         $this->_moduleDataSetup = $moduleDataSetup;
         $this->_eavSetupFactory = $eavSetupFactory;
     }
@@ -23,14 +25,15 @@ class AddCourseTime implements DataPatchInterface
     public function apply()
     {
         $eavSetup = $this->_eavSetupFactory->create(['setup' => $this->_moduleDataSetup]);
-
+        $eavSetup->removeAttribute(\Magento\Catalog\Model\Product::ENTITY, 'course_start_time');
+        $eavSetup->removeAttribute(\Magento\Catalog\Model\Product::ENTITY, 'course_end_time');
         $eavSetup->addAttribute(
             \Magento\Catalog\Model\Product::ENTITY, 'course_start_time', [
             'type' => 'datetime',
             'backend' => '',
             'frontend' => '',
             'label' => 'Course start time',
-            'input' => 'date',
+            'input' => 'datetime',
             'class' => '',
             'source' => '',
             'group' => 'Course Date',
@@ -58,7 +61,7 @@ class AddCourseTime implements DataPatchInterface
             'backend' => '',
             'frontend' => '',
             'label' => 'Course end time',
-            'input' => 'date',
+            'input' => 'datetime',
             'class' => '',
             'source' => '',
             'group' => 'Course Date',
