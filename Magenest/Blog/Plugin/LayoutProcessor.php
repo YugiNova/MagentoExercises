@@ -28,8 +28,6 @@ class LayoutProcessor
             'component' => 'Magento_Ui/js/form/element/select',
             'config' => [
                 // customScope is used to group elements within a single form (e.g. they can be validated separately)
-                'customScope' => 'shippingAddress.custom_attributes',
-                'customEntry' => null,
                 'template' => 'ui/form/field',
                 'elementTmpl' => 'ui/form/element/select',
 //                'tooltip' => [
@@ -45,7 +43,6 @@ class LayoutProcessor
             ],
             'options' => $this->getVnRegionOptions(),
             'filterBy' => null,
-            'customEntry' => null,
             'visible' => true,
             'value' => 1 // value field is used to set a default value of the attribute
         ];
