@@ -21,7 +21,7 @@ class OrderDocumentItem extends \Magento\Framework\View\Element\Template
 {
     private $resource;
 
-    public function __construct(Template\Context $context, array $data = [], ResourceConnection $resource)
+    public function __construct(Template\Context $context,  ResourceConnection $resource,array $data = [])
     {
         $this->resource = $resource;
         parent::__construct($context, $data);

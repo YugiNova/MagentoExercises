@@ -411,11 +411,12 @@ class Edit extends \Magento\Directory\Block\Data
     {
         $attribute = $this->eavConfig->getAttribute('customer_address', 'vn_region');
         $selectedValue = $this->getAddress()->getCustomAttribute('vn_region');
+        $options = $attribute->getSource()->getAllOptions();
+        $result = [];
         if (isset($selectedValue)) {
             $selectedValue = $selectedValue->getValue();
 
-            $options = $attribute->getSource()->getAllOptions();
-            $result = [];
+
             foreach ($options as $option) {
                 if ($option['value'] == $selectedValue) {
                     $result[] = [
@@ -430,6 +431,14 @@ class Edit extends \Magento\Directory\Block\Data
                         'selected' => false
                     ];
                 }
+            }
+        } else {
+            foreach ($options as $option) {
+                $result[] = [
+                    'value' => $option['value'],
+                    'label' => $option['label'],
+                    'selected' => false
+                ];
             }
         }
         return $result ?? [];

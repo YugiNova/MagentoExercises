@@ -14,8 +14,11 @@ class ChangeOrderStatus implements ObserverInterface
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
         $order = $observer->getData('order');
-        $orderId = $observer->getData('order_ids')[0];
+        if($order->getData('total_due') == '0.0000')
+        {
+            $orderId = $observer->getData('order_ids')[0];
+            $this->invoice->execute($orderId);
+        }
         $debug = '';
-        $this->invoice->execute($orderId);
     }
 }

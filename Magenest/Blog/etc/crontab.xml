@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="index">
+        <job name="cron_add_blog" instance="Magenest\Blog\Cron\AddBlog" method="execute">
+            <config_path>course/blog_cronjob/blog_cronjob_schedule</config_path>
+<!--            <schedule>* * * * *</schedule>-->
+        </job>
+    </group>
+</config>
