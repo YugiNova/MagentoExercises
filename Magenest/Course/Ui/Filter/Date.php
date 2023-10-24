@@ -93,8 +93,6 @@ class Date extends Column
                     'date' => [
                         'options' => [
                             'dateFormat' => $config['dateFormat'] ?? $this->timezone->getDateFormatWithLongYear(),
-                            'timeFormat' =>  "HH:mm:ss",
-                            'showsTime' => true
                         ]
                     ]
                 ]
