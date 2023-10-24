@@ -84,8 +84,11 @@ class Date extends Column
     {
         $config = $this->getData('config');
         if (isset($config['filter'])) {
+            $config['options'] = [
+                'showsTime' => true
+            ];
             $config['filter'] = [
-                'filterType' => 'dateRange',
+                'filterType' => 'datetimeRange',
                 'templates' => [
                     'date' => [
                         'options' => [

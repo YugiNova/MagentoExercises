@@ -8,6 +8,11 @@
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <columns name="product_columns">
         <column name="course_start_time" class="Magenest\Course\Ui\Filter\Date">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="showsTime" xsi:type="boolean">true</item>
+                </item>
+            </argument>
             <settings>
                 <label translate="true">Course Active From</label>
                 <sortable>true</sortable>
@@ -17,6 +22,11 @@
             </settings>
         </column>
         <column name="course_end_time" class="Magenest\Course\Ui\Filter\Date">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="showsTime" xsi:type="boolean">true</item>
+                </item>
+            </argument>
             <settings>
                 <filter>dateRange</filter>
                 <label translate="true">Course Active To</label>
