@@ -53,7 +53,7 @@
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Title</item>
                     <item name="formElement" xsi:type="string">input</item>
-                    <item name="source" xsi:type="string">title</item>
+                    <item name="source" xsi:type="string">data</item>
                     <item name="dataScope" xsi:type="string">title</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
@@ -71,9 +71,10 @@
                         <item name="add_images" xsi:type="boolean">true</item>
                         <item name="add_directives" xsi:type="boolean">true</item>
                         <item name="is_pagebuilder_enabled" xsi:type="boolean">false</item>
+                        <item name="dataScope" xsi:type="string">content</item>
                     </item>
-                    <item name="source" xsi:type="string">content</item>
-                    <item name="dataScope" xsi:type="string">content</item>
+                    <item name="source" xsi:type="string">data</item>
+
                 </item>
             </argument>
             <settings>
@@ -94,7 +95,7 @@
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Description</item>
                     <item name="formElement" xsi:type="string">input</item>
-                    <item name="source" xsi:type="string">description</item>
+                    <item name="source" xsi:type="string">data</item>
                     <item name="dataScope" xsi:type="string">description</item>
                     <item name="validation" xsi:type="array">
                         <item name="required-entry" xsi:type="boolean">true</item>
@@ -108,11 +109,9 @@
                     <item name="dataType" xsi:type="string">text</item>
                     <item name="label" xsi:type="string" translate="true">Url Rewrite</item>
                     <item name="formElement" xsi:type="string">input</item>
-                    <item name="source" xsi:type="string">url_rewrite</item>
+                    <item name="source" xsi:type="string">data</item>
                     <item name="dataScope" xsi:type="string">url_rewrite</item>
-                    <item name="validation" xsi:type="array">
-                        <item name="required-entry" xsi:type="boolean">true</item>
-                    </item>
+                    <item name="notice" xsi:type="string" translate="true">Leave input empty to save url rewrite as default format (Ex: blogID.html)</item>
                 </item>
             </argument>
         </field>

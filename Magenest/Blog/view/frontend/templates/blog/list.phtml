@@ -8,7 +8,7 @@
             <h3><?= $blog['title'] ?></h3>
             <p><?= $blog['description'] ?></p>
             <p><?= $blog['author'] ?></p>
-            <a href="<?= $block->getBaseUrl() . "/" . $blog['url_rewrite'] ?>">See detail</a>
+            <a href="<?= $block->getBaseUrl() . $blog['url_rewrite'] ?>">See detail</a>
         </div>
     <?php endif; ?>
 <?php endforeach; ?>

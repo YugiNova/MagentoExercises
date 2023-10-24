@@ -139,12 +139,12 @@
                 </item>
             </argument>
         </column>
-<!--        <actionsColumn name="actions" class="Magenest\Movie\Ui\Component\Movie\Column\Actions">-->
-<!--            <argument name="data" xsi:type="array">-->
-<!--                <item name="config" xsi:type="array">-->
-<!--                    <item name="indexField" xsi:type="string">blog_id</item>-->
-<!--                </item>-->
-<!--            </argument>-->
-<!--        </actionsColumn>-->
+        <actionsColumn name="actions" class="Magenest\Blog\Ui\Blog\Column\Actions">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">blog_id</item>
+                </item>
+            </argument>
+        </actionsColumn>
     </columns>
 </listing>
