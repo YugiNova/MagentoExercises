@@ -10,5 +10,8 @@
         <referenceContainer name="header.panel">
             <block class="Magenest\Blog\Block\AccountType" name="account_type" template="Magenest_Blog::account_type.phtml"/>
         </referenceContainer>
+        <referenceContainer name="catalog.topnav">
+            <block class="Magenest\Blog\Block\Blog\BlogMenu" name="blog.menu" template="Magenest_Blog::blog/menu.phtml"/>
+        </referenceContainer>
     </body>
 </page>
