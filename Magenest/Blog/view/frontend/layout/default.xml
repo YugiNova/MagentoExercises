@@ -6,6 +6,9 @@
  */
 -->
 <page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magenest_Blog::css/minicart-slide.css"/>
+    </head>
     <body>
         <referenceContainer name="header.panel">
             <block class="Magenest\Blog\Block\AccountType" name="account_type" template="Magenest_Blog::account_type.phtml"/>
@@ -13,5 +16,18 @@
         <referenceContainer name="catalog.topnav">
             <block class="Magenest\Blog\Block\Blog\BlogMenu" name="blog.menu" template="Magenest_Blog::blog/menu.phtml"/>
         </referenceContainer>
+        <referenceBlock name="minicart" template="Magenest_Blog::cart/minicart.phtml">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="minicart_content" xsi:type="array">
+                            <item name="config" xsi:type="array">
+                                <item name="template" xsi:type="string">Magenest_Blog/content</item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
     </body>
 </page>

@@ -1,0 +1,7 @@
+.custom-modal{
+    left: calc(100% - 400px);
+}
+
+.custom-modal._show{
+    z-index: 902;
+}
